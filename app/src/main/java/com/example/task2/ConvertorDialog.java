@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 public class ConvertorDialog extends Dialog implements View.OnClickListener {
-    TextView amount;
+    TextView amount,money_;
     RadioGroup radio_g;
     //    RadioButton first_radio,second_radio,third_radio,fourth_radio;
     Button convert1;
@@ -55,25 +55,28 @@ public class ConvertorDialog extends Dialog implements View.OnClickListener {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.first_radio:
-                        Toast.makeText(context, "radio button", Toast.LENGTH_SHORT).show();
-                        hold_value = String.valueOf(Float.parseFloat(amount1) * 82.0f);
+                        hold_value = String.valueOf(Float.parseFloat(amount1) / 82.0f);
                         amount.setText(hold_value);
                         onConvertListener.usa();
+                        money_.setText("Doller");
                         break;
                     case R.id.second_radio:
-                        hold_value = String.valueOf(Float.parseFloat(amount1) * 0.084f);
+                        hold_value = String.valueOf(Float.parseFloat(amount1) / 0.084f);
                         amount.setText(hold_value);
                         onConvertListener.china();
+                        money_.setText("Yuan");
                         break;
                     case R.id.third_radio:
-                        hold_value = String.valueOf(Float.parseFloat(amount1) * 0.85f);
+                        hold_value = String.valueOf(Float.parseFloat(amount1) / 0.85f);
                         amount.setText(hold_value);
                         onConvertListener.russia();
+                        money_.setText("Ruble");
                         break;
                     case R.id.fourth_radio:
-                        hold_value = String.valueOf(Float.parseFloat(amount1) * 0.011f);
+                        hold_value = String.valueOf(Float.parseFloat(amount1) / 0.011f);
                         amount.setText(hold_value);
                         onConvertListener.Spain();
+                        money_.setText("Euro");
                         break;
                 }
             }
@@ -84,6 +87,7 @@ public class ConvertorDialog extends Dialog implements View.OnClickListener {
         amount = findViewById(R.id.amount);
         radio_g = findViewById(R.id.radio_g);
         convert1 = findViewById(R.id.convert1);
+        money_ = findViewById(R.id.money_);
 
     }
 

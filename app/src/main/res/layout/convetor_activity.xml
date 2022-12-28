@@ -9,22 +9,32 @@
         android:id="@+id/user_cc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:text="UserName"
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/color_pick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="<-Pick color->"
+        app:layout_constraintLeft_toRightOf="@id/user_cc"
+        app:layout_constraintRight_toLeftOf="@id/phone_cc"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/phone_cc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:text="Phone"
         android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@id/user_cc"
+        app:layout_constraintLeft_toRightOf="@id/color_pick"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,6 +46,7 @@
         android:hint="Date->"
         android:textColorHint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/pick_date"
         app:layout_constraintTop_toBottomOf="@id/user_cc" />
 
     <TextView
@@ -46,6 +57,7 @@
         android:layout_marginTop="53dp"
         android:hint="pick date"
         app:layout_constraintLeft_toRightOf="@id/date_"
+        app:layout_constraintRight_toLeftOf="@id/time_"
         app:layout_constraintTop_toBottomOf="@id/user_cc" />
 
     <Button
@@ -57,6 +69,7 @@
         android:hint="Date->"
         android:textColorHint="@color/white"
         app:layout_constraintLeft_toRightOf="@id/pick_date"
+        app:layout_constraintRight_toLeftOf="@id/pick_time"
         app:layout_constraintTop_toBottomOf="@id/user_cc" />
 
     <TextView
@@ -67,6 +80,7 @@
         android:layout_marginTop="53dp"
         android:hint="pick time"
         app:layout_constraintLeft_toRightOf="@id/time_"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_cc" />
 
     <TextView
@@ -76,15 +90,28 @@
         android:layout_marginTop="53dp"
         android:text="Enter amount in INR : "
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/enter_amount"
         app:layout_constraintTop_toBottomOf="@id/date_" />
 
     <EditText
-        android:layout_width="200dp"
+        android:id="@+id/enter_amount"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="53dp"
         android:hint="Enter Amount"
-        android:id="@+id/enter_amount"
         app:layout_constraintLeft_toRightOf="@id/a_i_INR"
+        app:layout_constraintRight_toLeftOf="@id/money_symbol"
+        app:layout_constraintTop_toBottomOf="@id/pick_date" />
+
+    <TextView
+        android:id="@+id/money_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="70dp"
+        android:text="Rupies"
+        app:layout_constraintLeft_toRightOf="@id/enter_amount"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pick_date" />
 
     <Button

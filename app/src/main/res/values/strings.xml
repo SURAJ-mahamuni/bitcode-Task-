@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">task 2</string>
+
+    <string-array name="color_name">
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Black</item>
+        <item>Blue</item>
+    </string-array>
 </resources>
