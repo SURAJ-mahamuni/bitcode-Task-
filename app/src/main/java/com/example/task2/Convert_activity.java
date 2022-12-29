@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Convert_activity extends AppCompatActivity implements View.OnClickListener{
     TextView user_cc,phone_cc,pick_date,pick_time,money_symbol;
     EditText enter_amount;
-    Button date_,time_,convert,color_pick;
+    Button date_,time_,convert;
     String amount;
 
     @Override
@@ -44,7 +44,6 @@ public class Convert_activity extends AppCompatActivity implements View.OnClickL
 
     private void initListener() {
         convert.setOnClickListener(this);
-        color_pick.setOnClickListener(this);
         date_.setOnClickListener(this);
         time_.setOnClickListener(this);
 
@@ -59,7 +58,6 @@ public class Convert_activity extends AppCompatActivity implements View.OnClickL
         date_ = findViewById(R.id.date_);
         time_ = findViewById(R.id.time_);
         convert = findViewById(R.id.convert);
-        color_pick = findViewById(R.id.color_pick);
         money_symbol = findViewById(R.id.money_symbol);
 
         amount = enter_amount.getText().toString();
@@ -107,9 +105,6 @@ public class Convert_activity extends AppCompatActivity implements View.OnClickL
                 }
             },16,29,true);
             timePickerDialog.show();
-        }
-        if(view == color_pick){
-
         }
         if(view == convert){
             Float holder = Float.valueOf(enter_amount.getText().toString());
